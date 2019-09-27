@@ -11,9 +11,6 @@ ADD backup.sh /backup.sh
 ADD install.sh /install.sh
 ADD run.sh /run.sh
 
-RUN echo "$SCHEDULE /backup.sh" > /crontab.txt && \
-    echo "$POSTGRES_PASSWORD" > /root/.pgpass && chmod 0600 /root/.pgpass && \
-    /usr/bin/crontab /crontab.txt && \
-    /usr/bin/sh install.sh
+RUN sh install.sh
 
 CMD ["sh", "run.sh"]
