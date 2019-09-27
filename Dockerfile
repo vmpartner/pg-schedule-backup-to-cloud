@@ -8,9 +8,12 @@ ENV POSTGRES_PASSWORD **None**
 ENV SCHEDULE **None**
 
 ADD backup.sh /backup.sh
+ADD install.sh /install.sh
+ADD run.sh /run.sh
 
 RUN echo "$SCHEDULE /backup.sh" > /crontab.txt && \
     echo "$POSTGRES_PASSWORD" > /root/.pgpass && chmod 0600 /root/.pgpass && \
-    /usr/bin/crontab /crontab.txt
+    /usr/bin/crontab /crontab.txt && \
+    /usr/bin/sh install.sh
 
-CMD ["/usr/sbin/crond", "-f", "-l", "8"]
+CMD ["sh", "run.sh"]
