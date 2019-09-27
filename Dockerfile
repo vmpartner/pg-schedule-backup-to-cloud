@@ -9,5 +9,6 @@ ENV SCHEDULE **None**
 
 ADD backup.sh /backup.sh
 ADD run.sh /run.sh
+RUN chmod +x /backup.sh &&  chmod +x /run.sh &&
 
 CMD ["sh", "run.sh"]
