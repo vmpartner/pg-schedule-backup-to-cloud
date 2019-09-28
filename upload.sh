@@ -2,11 +2,14 @@
 
 set -e
 
+DUMPNAME=$(date +%Y%m%d%H%M).sql.gz
+
 if [ "$FTP_URL" = "**None**" ]; then
   return
 else
   cd /backup/
   gzip dump.sql
-  curl -T dump.sql.gz -u "$FTP_USER":"$FTP_PASSWORD" "$FTP_URL"
-  rm -f dump.sql.gz
+  mv dump.sql.gz "$DUMPNAME"
+  curl -T "$DUMPNAME" -u "$FTP_USER":"$FTP_PASSWORD" "$FTP_URL"
+  rm -f "$DUMPNAME"
 fi
