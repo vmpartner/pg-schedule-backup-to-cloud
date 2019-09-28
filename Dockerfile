@@ -12,6 +12,7 @@ ENV FTP_PASSWORD **None**
 ENV CHECK_URL **None**
 
 RUN apk update && apk add curl
+ADD upload.sh /upload.sh
 ADD backup.sh /backup.sh
 ADD run.sh /run.sh
 RUN chmod +x /backup.sh && chmod +x /run.sh
