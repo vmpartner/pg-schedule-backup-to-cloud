@@ -2,7 +2,7 @@
 
 set -e
 
-if [ "${SCHEDULE}" = "**None**" ]; then
+if [ "$SCHEDULE" = "**None**" ]; then
   sh /backup.sh && sleep 4h
 else
   echo "$POSTGRES_HOST:$POSTGRES_PORT:$POSTGRES_DATABASE:$POSTGRES_USER:$POSTGRES_PASSWORD" > /root/.pgpass &&
