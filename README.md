@@ -14,7 +14,6 @@ Usage example
       FTP_PASSWORD: "my_ftp_password"
       FTP_URL: "ftp://ftp.selcdn.ru/my_container/my_math/"
       FTP_USER: "my_ftp_user"
-      TZ: "Europe/Moscow"
       CHECK_URL: "https://hc-ping.com/my_check_token" # https://healthchecks.io
     volumes:
       - /backup:/backup
