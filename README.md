@@ -1,4 +1,4 @@
-# Backup postgres to ftp by schedule
+# Backup postgres to cloud by schedule
 
 Usage example
 ```yaml
