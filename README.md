@@ -3,7 +3,7 @@
 Usage example
 ```yaml
   postgres-backup:
-    image: vmpartner/pg-schedule-backup:version-1.0.4
+    image: vmpartner/pg-schedule-backup-to-cloud
     environment:
       POSTGRES_DATABASE: "my_database"
       POSTGRES_HOST: "postgres"
