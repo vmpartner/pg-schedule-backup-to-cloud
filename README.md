@@ -11,9 +11,13 @@ Usage example
       POSTGRES_USER: "my_user"
       POSTGRES_PASSWORD: "my_password"
       SCHEDULE: "0 */6 * * *"
-      FTP_PASSWORD: "my_ftp_password"
-      FTP_URL: "ftp://ftp.selcdn.ru/my_container/my_math/"
-      FTP_USER: "my_ftp_user"
+      RCLONE_CONFIG_SELECTEL_TYPE: "swift"
+      RCLONE_CONFIG_SELECTEL_ENV_AUTH: "false"
+      RCLONE_CONFIG_SELECTEL_USER: "my_user"
+      RCLONE_CONFIG_SELECTEL_KEY: "my_password"
+      RCLONE_CONFIG_SELECTEL_AUTH: "https://auth.selcdn.ru/v1.0"
+      RCLONE_CONFIG_SELECTEL_ENDPOINT_TYPE: "public"
+      RCLONE_DEST: "selectel:my_container/my_math"
       TZ: "Europe/Moscow"
       CHECK_URL: "https://hc-ping.com/my_check_token" # https://healthchecks.io
     volumes:
@@ -25,4 +29,5 @@ Usage example
       - postgres
     labels:
       io.rancher.container.pull_image: always
-```
+```   
+Word "SELECTEL" is just example, it is your custom destination config name. You can configure any destination that implemented in https://rclone.org

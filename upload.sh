@@ -10,6 +10,6 @@ else
   cd /backup/
   gzip dump.sql
   mv dump.sql.gz "$DUMPNAME"
-  curl -T "$DUMPNAME" -u "$FTP_USER":"$FTP_PASSWORD" "$FTP_URL"
+  rclone copy "$DUMPNAME" "$RCLONE_DEST"
   rm -f "$DUMPNAME"
 fi
