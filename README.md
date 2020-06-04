@@ -1,6 +1,6 @@
 # Backup postgres to ftp by schedule
 
-Usage example
+## Backup
 ```yaml
   postgres-backup:
     image: vmpartner/pg-schedule-backup-to-cloud
