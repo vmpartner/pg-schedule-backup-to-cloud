@@ -31,3 +31,9 @@ Usage example
       io.rancher.container.pull_image: always
 ```   
 Word "SELECTEL" is just example, it is your custom destination config name. You can configure any destination that implemented in https://rclone.org
+
+## Restore
+For restore db copy file db to server and execute:
+```
+pg_restore --format=c --dbname="my_db" --jobs=4 --no-acl --username="my_user" -v my_file.sql
+```
