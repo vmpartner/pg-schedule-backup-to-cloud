@@ -3,6 +3,7 @@
 set -e
 
 mkdir -p /backup
+rm /backup/dump.sql
 pg_dump --create --file=/backup/dump.sql --format=c --dbname="$POSTGRES_DATABASE" --username="$POSTGRES_USER" --host="$POSTGRES_HOST" --port="$POSTGRES_PORT" -v
 sh /upload.sh
 if [ "$CHECK_URL" = "**None**" ]; then
